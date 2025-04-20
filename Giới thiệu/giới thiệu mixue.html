@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="vi" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="description" content="Giới thiệu về Mixue Việt Nam - Thương hiệu trà sữa và kem nổi tiếng từ Đài Loan, cam kết mang đến sản phẩm chất lượng và trải nghiệm tuyệt vời.">
+    <meta name="keywords" content="Mixue, trà sữa, kem, Việt Nam, giới thiệu">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.jpg">
+    <title>Giới thiệu Mixue</title>
+    <style>
+        /* Reset margins and paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            font-size: 16px;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(8, 8, 8, 0.267);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 99999;
+        }
+
+        #top .logo img {
+            width: 220px;
+            height: 70px;
+            margin-left: 30px;
+        }
+
+        .nav-links {
+            padding: 10px 30px;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .menu-toggle.active::before {
+            content: '×';
+            font-size: 24px;
+        }
+
+        .menu-toggle::before {
+            content: '☰';
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            position: relative;
+            color: #353535;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            margin-right: 20px;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0;
+            height: 2px;
+            background-color: #f70400;
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Introduction section */
+        .intro-section {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.8);
+            overflow: hidden;
+        }
+
+        .intro-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('../img/banner\(1\).png');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        .intro-text {
+            position: relative;
+            font-size: 40px;
+            font-weight: bold;
+            color: #f9f9f9;
+            z-index: 2;
+        }
+
+
+        .intro-text h1 {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        /* Content Section */
+        .flex-container {
+            max-width: 100%;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            align-items: center;
+            margin: 50px 0;
+        }
+
+        .text-image {
+            display: flex;
+            align-items: center;
+            gap: 100px;
+            max-width: 1000px;
+        }
+
+        .text-image:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .text {
+            flex: 1;
+            padding: 20px;
+            max-width: 800px;
+            text-align: left;
+            border-radius: 15px;
+            box-shadow: 0px 4px 12px rgba(104, 104, 104, 0.116);
+            border: 5px solid #f70400;
+        }
+
+        .text h2 {
+            font-size: 23px;
+            margin-bottom: 10px;
+            color: #f70400;
+            text-align: center;
+        }
+
+        .text p {
+            font-size: 1em;
+            line-height: 1.6em;
+            color: #333;
+            text-align: justify;
+        }
+
+        .image {
+            width: 350px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .image:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222222;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            min-width: 200px;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .footer-column-col-6 {
+            flex: 2;
+            min-width: 200px;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .footer-column-col-3 {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .footer-logo {
+            width: 300px;
+            height: 200px;
+        }
+
+        footer h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: white;
+        }
+
+        footer p, footer ul {
+            font-size: 14px;
+            line-height: 1.4;
+            text-align: left;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin: 5px 0;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 15px;
+            color: #fff;
+            font-size: 0.8rem;
+        }
+
+        /* Back to Top */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 30px;
+            height: 30px;
+            background-color: #b80300;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        #back-to-top:hover {
+            background-color: #d70300;
+        }
+
+        .mui_ten {
+            margin: 10px;
+            width: 10px;
+            height: 10px;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 10px solid white;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .text-image {
+                flex-direction: column;
+                gap: 30px;
+                padding: 0 20px;
+            }
+            .text-image:nth-child(even) {
+                flex-direction: column;
+            }
+            .image {
+                width: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            nav ul {
+                flex-direction: column;
+                position: fixed;
+                top: 80px;
+                right: 10px;
+                background-color: #ffffff;
+                width: 200px;
+                display: none;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 10px 0;
+                border-radius: 8px;
+                z-index: 9999;
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            nav ul.active {
+                display: flex;
+                transform: translateX(0);
+                opacity: 1;
+            }
+            nav ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+            .menu-banner {
+                min-height: 200px;
+            }
+            .intro-text h1 {
+                font-size: 24px;
+            }
+            .text {
+                padding: 15px;
+            }
+            .text h2 {
+                font-size: 20px;
+            }
+            .text p {
+                font-size: 0.9em;
+            }
+            .image {
+                width: 250px;
+            }
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer-logo {
+                width: 200px;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #top .logo img {
+                width: 150px;
+                height: 50px;
+                margin-left: 10px;
+            }
+            header {
+                padding: 10px 20px;
+            }
+            .menu-banner {
+                min-height: 150px;
+            }
+            .intro-text h1 {
+                font-size: 20px;
+            }
+            body {
+                font-size: 14px;
+            }
+            .text h2 {
+                font-size: 18px;
+            }
+            .text p {
+                font-size: 0.85em;
+            }
+            .image {
+                width: 200px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            nav ul {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* General Image Optimization */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="top">
+        <div class="logo">
+            <a href="../Trang chủ.html" title="Mixue Logo">
+                <img src="../img/logo_mixue.webp" alt="Mixue Logo" loading="lazy">
+            </a>
+        </div>
+        <div class="nav-links">
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Mở menu" aria-expanded="false"></button>
+            <nav role="navigation">
+                <ul>
+                    <li><a href="../Trang chủ.html">Trang Chủ</a></li>
+                    <li><a href="../Menu 2/menu.html">Menu Mixue</a></li>
+                    <li><a href="./giới thiệu mixue.html">Giới Thiệu</a></li>
+                    <li><a href="../Liên hệ/liên hệ.html">Liên Hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Banner -->
+    <section class="intro-section">
+        <div class="intro-text">
+            <h1>GIỚI THIỆU</h1>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="flex-container">
+        <div class="content">
+            <div class="text-image">
+                <div class="text">
+                    <h2>Mixue Việt Nam</h2>
+                    <p>Mixue là một thương hiệu trà sữa xuất phát từ Đài Loan. Hiện nay đã mở rộng thị trường tới nhiều quốc gia trên thế giới, bao gồm <strong>Trung Quốc, Hàn Quốc, Singapore, Malaysia, Mỹ, Canada và Việt Nam</strong>. Với chất lượng và hương vị tuyệt vời, Mixue nhanh chóng trở thành một thương hiệu nổi tiếng trong ngành công nghiệp kem và trà sữa trên toàn thế giới.</p>
+                </div>
+                <img src="./ch mixue.jpg" alt="Mixue Việt Nam" class="image" loading="lazy">
+            </div>
+            <div class="text-image">
+                <div class="text">
+                    <h2>Cam kết</h2>
+                    <p>Các sản phẩm của Mixue được làm từ <strong>nguyên liệu tươi sạch, chất lượng cao và đảm bảo an toàn</strong> cho sức khỏe cho người sử dụng. Từ trà sữa truyền thống, trà sữa trân châu, trà sữa trái cây đến kem trà sữa, kem và nhiều loại thức uống khác, Mixue luôn cập nhật và nâng cao chất lượng sản phẩm để đáp ứng sự yêu thích và sự tin tưởng của khách hàng.</p>
+                </div>
+                <img src="./cam_kết_mixue.jpg" alt="Cam kết Mixue" class="image" loading="lazy">
+            </div>
+            <div class="text-image">
+                <div class="text">
+                    <h2>Mục tiêu</h2>
+                    <p>Mixue không chỉ đáp ứng nhu cầu uống đồ ngon của giới trẻ mà còn tạo ra một không gian xanh mát mới, hiện đại và thư giãn ngay trong chính cửa hàng. Với mục tiêu trở thành một trong những <strong>thương hiệu trà sữa hàng đầu tại Việt Nam và trên toàn cầu</strong>, Mixue luôn nỗ lực phát triển và mở rộng quy mô kinh doanh, cùng với việc nâng cao chất lượng sản phẩm và dịch vụ, nhằm mang đến cho khách hàng những trải nghiệm đẳng cấp và tốt nhất.</p>
+                </div>
+                <img src="./mục_tiêu_mixue.png" alt="Mục tiêu Mixue" class="image" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <img src="../img/footer_logo.png" alt="Mixue Logo" class="footer-logo" loading="lazy">
+            </div>
+            <div class="footer-column-col-6">
+                <h3>Mixue</h3>
+                <div class="p2 clearfix">
+                    <div class="icon_layout">
+                        <img src="../img/icon_địa chỉ.png" style="width: 20px; height: auto;" loading="lazy">
+                    </div>
+                    <p>Địa chỉ: số 159 phố Giảng Võ, Phường Cát Linh, Quận Ðống Ða, Thành phố Hà Nội, Việt Nam</p>
+                </div>
+                <div class="p2 clearfix">
+                    <div class="icon_layout">
+                        <img src="../img/icon_email.png" style="width: 30px; height: auto;" loading="lazy">
+                    </div>
+                    <p>Email: mixuevietnam@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-column-col-3">
+                <h3>Menu</h3>
+                <ul>
+                    <li><a href="../Menu 2/menu.html">Kem và Sundae</a></li>
+                    <li><a href="../Menu 2/tra_hoa_qua.html">Trà hoa quả</a></li>
+                    <li><a href="../Menu 2/tra_sua.html">Trà sữa</a></li>
+                    <li><a href="../Menu 2/do_an_vat.html">Đồ ăn vặt</a></li>
+                    <li><a href="../Menu 2/do_luu_niem.html">Đồ lưu niệm</a></li>
+                </ul>
+            </div>
+            <div class="footer-column-col-3">
+                <h3>Về chúng tôi</h3>
+                <ul>
+                    <li><a href="../Trang chủ.html">Trang Chủ</a></li>
+                    <li><a href="../Menu 2/menu.html">Menu Mixue</a></li>
+                    <li><a href="./giới thiệu mixue.html">Giới Thiệu</a></li>
+                    <li><a href="../Liên hệ/liên hệ.html">Liên Hệ</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-bottom">
+            <p>Copyright © 2024 - Mixue Việt Nam</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div id="back-to-top" onclick="scrollToTop()" aria-label="Quay lại đầu trang">
+        <div class="mui_ten"></div>
+    </div>
+
+    <script>
+        // Toggle Menu for Mobile
+        function toggleMenu() {
+            const navbar = document.querySelector('nav ul');
+            const toggleButton = document.querySelector('.menu-toggle');
+            const isActive = navbar.classList.toggle('active');
+            toggleButton.classList.toggle('active', isActive);
+            toggleButton.setAttribute('aria-expanded', isActive);
+            toggleButton.setAttribute('aria-label', isActive ? 'Đóng menu' : 'Mở menu');
+        }
+
+        window.toggleMenu = toggleMenu;
+
+        // Close menu when clicking a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navbar = document.querySelector('nav ul');
+                const toggleButton = document.querySelector('.menu-toggle');
+                navbar.classList.remove('active');
+                toggleButton.classList.remove('active');
+                toggleButton.setAttribute('aria-expanded', 'false');
+                toggleButton.setAttribute('aria-label', 'Mở menu');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            const navbar = document.querySelector('nav ul');
+            const toggleButton = document.querySelector('.menu-toggle');
+            const isClickInside = navbar.contains(event.target) || toggleButton.contains(event.target);
+            if (!isClickInside && navbar.classList.contains('active')) {
+                navbar.classList.remove('active');
+                toggleButton.classList.remove('active');
+                toggleButton.setAttribute('aria-expanded', 'false');
+                toggleButton.setAttribute('aria-label', 'Mở menu');
+            }
+        });
+
+        // Close menu with Escape key
+        document.addEventListener('keydown', (event) => {
+            const navbar = document.querySelector('nav ul');
+            const toggleButton = document.querySelector('.menu-toggle');
+            if (event.key === 'Escape' && navbar.classList.contains('active')) {
+                navbar.classList.remove('active');
+                toggleButton.classList.remove('active');
+                toggleButton.setAttribute('aria-expanded', 'false');
+                toggleButton.setAttribute('aria-label', 'Mở menu');
+            }
+        });
+
+        // Back to Top
+        window.onscroll = function () { toggleBackToTopButton(); };
+
+        function toggleBackToTopButton() {
+            const button = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
+</body>
+</html>

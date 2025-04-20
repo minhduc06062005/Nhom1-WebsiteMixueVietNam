@@ -1,0 +1,128 @@
+ /* Reset margins and paddings */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/*Header section*/
+header {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+.logo img {
+    width: 260px; height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/*Banner Section*/
+.menu-banner {
+    background-color: #f44336;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+.menu-banner h1 { 
+font-size: 50px;
+}
+
+.menu-items {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style for category filters */
+.category-filters {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.category-filters button {
+    background-color: #e30613;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.category-filters button:hover {
+    background-color: #c2000d;
+}
+
+.category-filters button.active {
+    background-color: #ff9800;
+}
+
+/* Style for menu items */
+.menu-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.menu-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 150px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.menu-item img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+.menu-name {
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+.price {
+    color: #ff5722;
+    font-weight:bold;
+}
