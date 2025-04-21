@@ -99,33 +99,38 @@
             width: 100%;
         }
 
-        /* Banner Section */
-        .menu-banner {
+        /* Introduction section */
+        .intro-section {
             position: relative;
-            background-color: #ff4d4d; /* Lighter red */
-            background-image: url('../img/ice-cream-pattern.png'); /* Placeholder pattern */
-            background-size: 100px 100px; /* Adjust pattern size */
-            background-repeat: repeat;
-            background-position: center;
-            min-height: 300px;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 20px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.8);
+            overflow: hidden;
         }
 
-        .menu-banner::before {
+        .intro-section::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
+            right: 0;
+            bottom: 0;
+            background-image: url('../img/banner\(1\).png');
+            background-size: cover;
+            background-position: center;
             z-index: 1;
         }
+
+        .intro-text {
+            position: relative;
+            font-size: 40px;
+            font-weight: bold;
+            color: #f9f9f9;
+            z-index: 2;
+        }
+
 
         .intro-text h1 {
             position: relative;
@@ -675,7 +680,7 @@
     </header>
 
     <!-- Main Banner -->
-    <section class="menu-banner">
+    <section class="intro-section">
         <div class="intro-text">
             <h1>MENU MIXUE</h1>
         </div>
